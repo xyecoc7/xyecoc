@@ -533,7 +533,7 @@ func build_ui() -> void:
 	var cl := CanvasLayer.new()
 	add_child(cl)
 	info_label = make_label(cl, Vector2(16, 12), 18)
-	quest_label = make_label(cl, Vector2(16, 150), 18)
+	quest_label = make_label(cl, Vector2(16, 175), 18)
 	quest_label.add_theme_color_override("font_color", Color(0.7, 0.85, 1.0))
 	msg_label = make_label(cl, Vector2(0, 40), 22)
 	msg_label.add_theme_color_override("font_color", Color(1.0, 0.85, 0.5))
@@ -564,7 +564,7 @@ func update_ui(delta: float) -> void:
 
 	msg_t -= delta
 	msg_label.visible = msg_t > 0.0
-	msg_label.position = Vector2((vs.x - msg_label.size.x) / 2.0, 40)
+	msg_label.position = Vector2((vs.x - msg_label.size.x) / 2.0, vs.y * 0.3)
 
 	hint_label.text = hint_for(player.looked_at())
 	hint_label.reset_size()
